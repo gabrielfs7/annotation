@@ -28,11 +28,11 @@ class AnnotationBag implements \IteratorAggregate, \Countable
 
     /**
      * @param $name
-     * @return Annotation
+     * @return mixed
      */
     public function get($name)
     {
-        return array_key_exists($name, $this->annotations) ? $this->annotations[$name] : null;
+        return array_key_exists($name, $this->annotations) ? $this->annotations[$name]->getValue() : null;
     }
 
     /**

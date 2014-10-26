@@ -54,14 +54,14 @@ class BagFactoryTest extends \PHPUnit_Framework_TestCase
      */
     private function compareBag(AnnotationBag $bag)
     {
-        $this->assertEquals(true, $bag->get('myAnnotationBoolean')->getValue());
-        $this->assertEquals('String name', $bag->get('myAnnotationString')->getValue());
-        $this->assertEquals('String name', $bag->get('myAnnotationString2')->getValue());
-        $this->assertEquals(123, $bag->get('myAnnotationNumber')->getValue());
-        $this->assertEquals(-123.84, $bag->get('myAnnotationNumber2')->getValue());
-        $this->assertEquals(123.456, $bag->get('myAnnotationNumber3')->getValue());
-        $this->assertEquals($this->getArrayValue(), $bag->get('myAnnotationArray')->getValue());
-        $this->assertEquals($this->getArrayValue(), $bag->get('myAnnotationArray2')->getValue());
+        $this->assertEquals(true, $bag->get('myAnnotationBoolean'));
+        $this->assertEquals('String name', $bag->get('myAnnotationString'));
+        $this->assertEquals('String name', $bag->get('myAnnotationString2'));
+        $this->assertEquals(123, $bag->get('myAnnotationNumber'));
+        $this->assertEquals(-123.84, $bag->get('myAnnotationNumber2'));
+        $this->assertEquals(123.456, $bag->get('myAnnotationNumber3'));
+        $this->assertEquals($this->getArrayValue(), $bag->get('myAnnotationArray'));
+        $this->assertEquals($this->getArrayValue(), $bag->get('myAnnotationArray2'));
     }
 
     private function getArrayValue()

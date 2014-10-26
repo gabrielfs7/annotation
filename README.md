@@ -105,14 +105,14 @@ class SampleClass
 $reader = new GSoares\Annotation\Reader();
 $annotationBag = $reader->readClass('GSoares\Annotation\Sample\SampleClass');
 
-$annotationBag->get('myAnnotationBoolean')->getValue(); //(boolean) true
-$annotationBag->get('myAnnotationString')->getValue(); //(string) String name
-$annotationBag->get('myAnnotationString2')->getValue(); //(string) String name
-$annotationBag->get('myAnnotationNumber')->getValue(); //(int) 123
-$annotationBag->get('myAnnotationNumber2')->getValue(); //(int) -123.84
-$annotationBag->get('myAnnotationNumber3')->getValue(); //(float) 123.456
-$annotationBag->get('myAnnotationArray')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
-$annotationBag->get('myAnnotationArray2')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+$annotationBag->get('myAnnotationBoolean'); //(boolean) true
+$annotationBag->get('myAnnotationString'); //(string) String name
+$annotationBag->get('myAnnotationString2'); //(string) String name
+$annotationBag->get('myAnnotationNumber'); //(int) 123
+$annotationBag->get('myAnnotationNumber2'); //(int) -123.84
+$annotationBag->get('myAnnotationNumber3'); //(float) 123.456
+$annotationBag->get('myAnnotationArray'); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+$annotationBag->get('myAnnotationArray2'); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
 ?>
 ```
 
@@ -126,14 +126,14 @@ $annotationBag = $reader->readProperty(
     'mySampleProperty'
 );
 
-$annotationBag->get('myAnnotationBoolean')->getValue(); //(boolean) true
-$annotationBag->get('myAnnotationString')->getValue(); //(string) String name
-$annotationBag->get('myAnnotationString2')->getValue(); //(string) String name
-$annotationBag->get('myAnnotationNumber')->getValue(); //(int) 123
-$annotationBag->get('myAnnotationNumber2')->getValue(); //(int) -123.84
-$annotationBag->get('myAnnotationNumber3')->getValue(); //(float) 123.456
-$annotationBag->get('myAnnotationArray')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
-$annotationBag->get('myAnnotationArray2')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+$annotationBag->get('myAnnotationBoolean'); //(boolean) true
+$annotationBag->get('myAnnotationString'); //(string) String name
+$annotationBag->get('myAnnotationString2'); //(string) String name
+$annotationBag->get('myAnnotationNumber'); //(int) 123
+$annotationBag->get('myAnnotationNumber2'); //(int) -123.84
+$annotationBag->get('myAnnotationNumber3'); //(float) 123.456
+$annotationBag->get('myAnnotationArray'); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+$annotationBag->get('myAnnotationArray2'); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
 ?>
 ```
 
@@ -147,13 +147,13 @@ $annotationBag = $reader->readMethod(
     'mySampleMethod'
 );
 
-$annotationBag->get('myAnnotationBoolean')->getValue(); //(boolean) true
-$annotationBag->get('myAnnotationString')->getValue(); //(string) String name
-$annotationBag->get('myAnnotationString2')->getValue(); //(string) String name
-$annotationBag->get('myAnnotationNumber')->getValue(); //(int) 123
-$annotationBag->get('myAnnotationNumber2')->getValue(); //(int) -123.84
-$annotationBag->get('myAnnotationNumber3')->getValue(); //(float) 123.456
-$annotationBag->get('myAnnotationArray')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
-$annotationBag->get('myAnnotationArray2')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+$annotationBag->get('myAnnotationBoolean'); //(boolean) true
+$annotationBag->get('myAnnotationString'); //(string) String name
+$annotationBag->get('myAnnotationString2'); //(string) String name
+$annotationBag->get('myAnnotationNumber'); //(int) 123
+$annotationBag->get('myAnnotationNumber2'); //(int) -123.84
+$annotationBag->get('myAnnotationNumber3'); //(float) 123.456
+$annotationBag->get('myAnnotationArray'); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+$annotationBag->get('myAnnotationArray2'); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
 ?>
 ```

@@ -23,7 +23,7 @@ class Reader
 
     /**
      * @param $className
-     * @return AnnotationBag
+     * @return mixed
      */
     public function readClass($className)
     {
@@ -33,7 +33,7 @@ class Reader
     /**
      * @param $className
      * @param $propertyName
-     * @return AnnotationBag
+     * @return mixed
      */
     public function readProperty($className, $propertyName)
     {
@@ -43,7 +43,7 @@ class Reader
     /**
      * @param $className
      * @param $methodName
-     * @return AnnotationBag
+     * @return mixed
      */
     public function readMethod($className, $methodName)
     {
