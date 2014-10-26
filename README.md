@@ -1,13 +1,13 @@
 Annotation PHP!
 =============
 
-Create and retrieve content for your own annotation.
+Create and retrieve content from your own PHP Class Annotations!
 
-
+Samples
+=============
 
 ```php
 <?php
-
 namespace GSoares\Annotation\Sample;
 
 /**
@@ -157,3 +157,8 @@ $annotationBag->get('myAnnotationArray'); //(Array) ['a' => 'b', 'c' => 'c', ['d
 $annotationBag->get('myAnnotationArray2'); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
 ?>
 ```
+
+Installation
+=============
+
+1. Project available in https://packagist.org/packages/gabrielfs7/annotation to install via composer.
