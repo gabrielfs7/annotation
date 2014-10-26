@@ -91,15 +91,19 @@ class BagFactory
             return $this->getBooleanValue($value);
         }
 
-        if ($this->isString($value)) {
-            return $this->getStringValue($value);
+        if ($this->isArray($value)) {
+            return $this->getArrayValue($value);
         }
 
         if ($this->isNumber($value)) {
             return $this->getNumberValue($value);
         }
 
-        return $this->getArrayValue($value);
+        if ($this->isString($value)) {
+            return $this->getStringValue($value);
+        }
+
+        return $value;
     }
 
     /**
@@ -124,6 +128,15 @@ class BagFactory
 
     /**
      * @param $value
+     * @return bool
+     */
+    private function isArray($value)
+    {
+        return strstr($this->removeBreackLines($value), '=>') !== false;
+    }
+
+    /**
+     * @param $value
      * @return boolean
      */
     private function isNumber($value)
@@ -139,15 +152,18 @@ class BagFactory
     private function getArrayValue($value)
     {
         try {
-            $part = preg_replace("/[\n]/", '', $value);
+            $part = $this->removeBreackLines($value);
             $part = preg_replace("/ {2,}/", ' ', $part);
-            $part = trim(trim($part), '[]');
+            $part = trim($part);
+
+            if (strpos($part, '[') === 0) {
+                $part = trim($part, '[]');
+            }
+
             $part = eval("return([$part]);");
         } catch (\Exception $e) {
             throw new InvalidAnnotationValueException($value);
         }
-
-        var_dump($part);
 
         return $part;
     }
@@ -179,19 +195,12 @@ class BagFactory
         return $value === 'false' ? false : true;
     }
 
-//    private function toArray($annotation, $part)
-//    {
-//        try {
-//            $part = preg_replace("/[\n]/", '', $part);
-//            $part = preg_replace("/ {2,}/", ' ', $part);
-//            $part = trim(ltrim($part, $annotation));
-//            $part[0] = '[';
-//            $part[strlen($part) - 1] = ']';
-//            $part = eval("return($part);");
-//        } catch (\Exception $e) {
-//            throw new AnnotationParseException('Annotation: ' . $annotation . '. Part: ' . $part, $e);
-//        }
-//
-//        return $part;
-//    }
+    /**
+     * @param $value
+     * @return string
+     */
+    private function removeBreackLines($value)
+    {
+        return preg_replace("/[\n]/", '', $value);
+    }
 }

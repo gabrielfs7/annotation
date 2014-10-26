@@ -96,7 +96,9 @@ class BagFactoryTest extends \PHPUnit_Framework_TestCase
         $bag->add($annotation1);
         $bag->add($annotation2);
 
-        $this->assertEquals($bag, $this->factory->create($this->getAnnotationArray()));
+        $result = $this->factory->create($this->getAnnotationArray());
+
+        $this->assertEquals($bag, $result);
     }
 
     private function getAnnotationNumber()
