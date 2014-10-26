@@ -2,7 +2,7 @@
 namespace GSoares\Annotation;
 
 /**
- * @package GSoares\RAP\Parser
+ * @package GSoares\Annotation
  * @author Gabriel Felipe Soares <gabrielfs7@gmail.com>
  */
 class Annotation

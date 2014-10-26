@@ -2,7 +2,7 @@
 namespace GSoares\Annotation;
 
 /**
- * @package GSoares\RAP\Annotation
+ * @package GSoares\Annotation
  * @author Gabriel Felipe Soares <gabrielfs7@gmail.com>
  */
 class AnnotationBag implements \IteratorAggregate, \Countable
