@@ -1,8 +1,6 @@
 <?php
 namespace GSoares\Annotation;
 
-use GSoares\Annotation\Sample\SampleClass;
-
 require __DIR__ . '/Sample/SampleClass.php';
 
 /**
@@ -51,6 +49,9 @@ class BagFactoryTest extends \PHPUnit_Framework_TestCase
         $this->compareBag($this->reader->readMethod('GSoares\Annotation\Sample\SampleClass', 'mySampleMethod'));
     }
 
+    /**
+     * @param AnnotationBag $bag
+     */
     private function compareBag(AnnotationBag $bag)
     {
         $this->assertEquals(true, $bag->get('myAnnotationBoolean')->getValue());
