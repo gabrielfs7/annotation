@@ -37,14 +37,18 @@ class BagFactory
      */
     private function getAnnotationParts($annotation)
     {
-        $lines = preg_split('/@/', preg_replace('/(\/\*\*)|(\*\/)|(\* )/', '', $annotation));
+        $lines = preg_split(
+            "/@/",
+            preg_replace('/(\/\*\*)|(\*\/)|(\* )/', '', $annotation),
+            -1
+        );
 
         array_shift($lines);
 
         $out = [];
 
         foreach ($lines as $line) {
-            if (trim($line) !== '') {
+            if (trim($line) !== '' && preg_match('/[a-zA-Z0-9]+\(/', $line) === 1) {
                 $out[] = $line;
             }
         }

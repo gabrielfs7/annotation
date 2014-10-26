@@ -136,6 +136,8 @@ class BagFactoryTest extends \PHPUnit_Framework_TestCase
         /** Comment that does not matter
          * Comment that does not matter
          *
+         * @author Gabriel Felipe Soares
+         * @annotationTest this annotation does not care
          * @myAnnotationBoolean1(true)
          * @myAnnotationBoolean2(false)
          */
