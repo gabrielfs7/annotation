@@ -98,12 +98,48 @@ class SampleClass
 ?>
 ```
 
-### Read class Annotations
+### Read Class Annotations
 
 ```php
 <?php
 $reader = new GSoares\Annotation\Reader();
 $annotationBag = $reader->readClass('GSoares\Annotation\Sample\SampleClass');
+
+$annotationBag->get('myAnnotationBoolean')->getValue(); //(boolean) true
+$annotationBag->get('myAnnotationString')->getValue(); //(string)String name
+$annotationBag->get('myAnnotationString2')->getValue(); //(string) String name
+$annotationBag->get('myAnnotationNumber')->getValue(); //(int) 123
+$annotationBag->get('myAnnotationNumber2')->getValue(); //(int) -123.84
+$annotationBag->get('myAnnotationNumber3')->getValue(); //(float) 123.456
+$annotationBag->get('myAnnotationArray')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+$annotationBag->get('myAnnotationArray2')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+?>
+```
+
+### Read Class Property Annotations
+
+```php
+<?php
+$reader = new GSoares\Annotation\Reader();
+$annotationBag = $reader->readProperty('GSoares\Annotation\Sample\SampleClass', 'mySampleProperty');
+
+$annotationBag->get('myAnnotationBoolean')->getValue(); //(boolean) true
+$annotationBag->get('myAnnotationString')->getValue(); //(string)String name
+$annotationBag->get('myAnnotationString2')->getValue(); //(string) String name
+$annotationBag->get('myAnnotationNumber')->getValue(); //(int) 123
+$annotationBag->get('myAnnotationNumber2')->getValue(); //(int) -123.84
+$annotationBag->get('myAnnotationNumber3')->getValue(); //(float) 123.456
+$annotationBag->get('myAnnotationArray')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+$annotationBag->get('myAnnotationArray2')->getValue(); //(Array) ['a' => 'b', 'c' => 'c', ['d' => ['e', 'f']]]
+?>
+```
+
+### Read Class Method Annotations
+
+```php
+<?php
+$reader = new GSoares\Annotation\Reader();
+$annotationBag = $reader->readMethod('GSoares\Annotation\Sample\SampleClass', 'mySampleMethod');
 
 $annotationBag->get('myAnnotationBoolean')->getValue(); //(boolean) true
 $annotationBag->get('myAnnotationString')->getValue(); //(string)String name
